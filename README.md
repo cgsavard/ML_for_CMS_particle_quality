@@ -1,6 +1,6 @@
 # ML_for_CMS_particle_quality
 
-Author: Claire Savard
+Author: Claire Savard  
 Email: claire.savard@colorado.edu
 
 In run_ML_analysis.ipynb, I create and train a neural network
@@ -14,7 +14,7 @@ Before running, you will need to install:
 1. *jupyter notebook (https://jupyter.org/)
 2. *scikit-learn (https://scikit-learn.org/stable/install.html)
 3. *keras (https://keras.io/#installation)
-4. uproot (https://pypi.org/project/uproot/)
+4. uproot (https://pypi.org/project/uproot/)  
 *I suggest you install anaconda 
 (https://www.anaconda.com/distribution/) which will install
 all packages 1-3 necessary from python.
