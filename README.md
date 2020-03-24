@@ -1,7 +1,7 @@
 # ML_for_CMS_particle_quality
-#
-# Author: Claire Savard
-# Email: claire.savard@colorado.edu
+
+Author: Claire Savard
+Email: claire.savard@colorado.edu
 
 In run_ML_analysis.ipynb, I create and train a neural network
 and a gradient boosted decision tree for the CMS particle
