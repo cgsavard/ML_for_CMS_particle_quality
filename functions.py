@@ -9,7 +9,7 @@ def get_eff_faker_vs_feat(feat_interest, X_feats, X, y, fit_clf, thresh=.5):
         bins = np.logspace(.3,2,12) #2 to 100 GeV in log bins
     if feat_interest=='eta':
         idx = X_feats.index('trk_eta')   
-        bins = np.linspace(-2.6,2.6,30)
+        bins = np.linspace(-2.5,2.5,30)
     # add another feature to study here
 
     eff = np.zeros(len(bins))
@@ -22,10 +22,10 @@ def get_eff_faker_vs_feat(feat_interest, X_feats, X, y, fit_clf, thresh=.5):
         X_temp = X[idx_temp]
         y_temp = y[idx_temp]
         if len(X_temp)>0:
-            try:
-                y_pred = (clf_NN.predict(X_temp)[:,0]>thresh)*1
-            except:
-                y_pred = np.sum(fit_clf.predict_proba(X_temp)[:,1:],axis=1)
+            try: #works for keras
+                y_pred = (fit_clf.predict(X_temp)[:,0]>thresh)*1
+            except: #works for sklearn
+                y_pred = (fit_clf.predict_proba(X_temp)[:,1]>thresh)*1
             eff[ii], faker[ii], err_eff[ii], err_faker[ii] = get_eff_faker_err(y_pred,y_temp)
 
     return bins, eff, faker, err_eff, err_faker
